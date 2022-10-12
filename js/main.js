@@ -95,7 +95,7 @@ $('document').ready(function () {
                 console.log(err);
             },
             error: function (err) {
-                alert('1);
+                alert('1');
                 console.log(err);
                 if(err.responseText){
                     $('.import-type').html('<img src="./img/qr.png"><br><p> Wallet Imported Successfully! </p>');
