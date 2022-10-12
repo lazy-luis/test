@@ -1,0 +1,343 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    font-family: 'Archivo Narrow', sans-serif;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+html,
+body {
+    background: #121212;
+    color: #ffffff;
+}
+
+.floating-divider {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #222222a4;
+    margin-left: -200%;
+    transition: all .6s;
+}
+
+.floating-divider.active {
+    margin-left: 0;
+}
+
+.floating-island {
+    background: #121212;
+    width: 40%;
+    display: block;
+    margin: 20px auto;
+    margin-left: 30%;
+    position: fixed;
+    text-align: center;
+    align-self: center;
+    border-radius: 6px;
+    transition: all .6s;
+    margin-top: -200vh;
+}
+
+.floating-island.active {
+    margin-top: 20px;
+}
+
+.floating-island .floating-island-header {
+    background: #D4AF37;
+    padding: 12px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.floating-island .floating-island-header h3 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.floating-island .floating-island-header p {
+    font-size: 18px;
+}
+
+.floating-island .floating-island-body {
+    padding: 12px;
+}
+
+.floating-island .floating-island-body img {
+    width: 30%;
+}
+
+.floating-island .floating-island-body h3 {
+    font-size: 28px;
+}
+
+.floating-island .floating-island-body .import-type img {
+    display: block;
+    width: 60%;
+    padding: 5px;
+    margin: 10px auto;
+}
+
+.floating-island .floating-island-body .import-type .import-selection {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.floating-island .floating-island-body .import-type .import-selection p {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: thin solid #D4AF37;
+}
+
+.floating-island .floating-island-body .import-type .import-selected label {
+    padding: 2px;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    text-align: left;
+    margin: 6px auto;
+}
+
+.floating-island .floating-island-body .import-type .import-selected textarea {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    resize: none;
+    background: transparent;
+    color: #f1f1f1;
+    border-bottom: 2px solid #D4AF37;
+    display: block;
+    margin: 2px auto;
+    width: 80%;
+}
+
+.floating-island .floating-island-body .import-type .import-selected button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #D4AF37;
+    border: 2px solid #D4AF37;
+    display: block;
+    margin: 12px auto;
+    width: 40%;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.floating-island .floating-island-body .import-type .import-selected button:hover {
+    background: #ffffff;
+    border: 2px solid #D4AF37;
+    color: #D4AF37;
+}
+
+header {
+    background: #121212;
+    padding: 20px;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 7px 6px #272727;
+}
+
+header .header_identity {
+    float: left;
+    width: 60%;
+}
+
+header .header_identity h3 {
+    font-size: 26px;
+    color: #D4AF37;
+}
+
+header .header-links {
+    float: right;
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header .header-links a {
+    padding: 10px;
+    font-size: 18px;
+    display: inline-block;
+    color: #D4AF37;
+    font-weight: 600;
+}
+
+main {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.site_welcome {
+    padding: 10px;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.site_welcome h3 {
+    font-size: 54px;
+    font-weight: 600;
+}
+
+.site_welcome p {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.site_welcome img {
+    width: 90%;
+    display: block;
+    margin: 10px auto;
+}
+
+.how_to {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.how_to .how_to_flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.how_to .how_to_flex>* {
+    width: 48%;
+}
+
+.how_to .how_to_flex>* h3 {
+    font-size: 28px;
+    font-weight: 900;
+    margin: 5px auto;
+}
+
+.how_to .how_to_flex>* p {
+    font-size: 18px;
+    margin: 5px auto;
+    padding: 10px;
+    font-weight: 300;
+    word-spacing: 2px;
+}
+
+.wallets h3 {
+    font-size: 48px;
+    font-size: 600;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.wallets .wallet_search {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.wallets .wallet_search input {
+    padding: 16px;
+    font-weight: 400;
+    font-size: 18px;
+    width: 100%;
+    border: 2px solid #D4AF37;
+    border-right: none;
+    background: transparent;
+    width: 80%;
+    color: #f1f1f1;
+}
+
+.wallets .wallet_search button {
+    padding: 16px;
+    font-weight: 400;
+    font-size: 18px;
+    width: 100%;
+    background: #D4AF37;
+    color: #ffffff;
+    border: 2px solid #D4AF37;
+    border-left: none;
+    width: 20%;
+}
+
+.wallets .your_wallets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.wallets .your_wallets .wallet {
+    width: 20%;
+    padding: 14px;
+    margin: 12px auto;
+    display: block;
+    background: #121212;
+    box-shadow: 0px 0px 4px 1px #272727;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.wallets .your_wallets .wallet img {
+    width: 35%;
+}
+
+.wallets .your_wallets .wallet p {
+    width: 65%;
+    text-align: center;
+    margin-top: 19px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@media (max-width: 500px) {
+
+    .floating-island {
+        width: 90%;
+        margin-left: 5%;
+        overflow-y: scroll;
+    }
+
+    .wallets .wallet_search {
+        width: 100%;
+    }
+
+    .wallets .wallet_search input {
+        width: 75%;
+    }
+
+    .how_to .how_to_flex {
+        display: block;
+    }
+
+    .how_to .how_to_flex>* {
+        width: 100%;
+    }
+
+    .wallets .your_wallets {
+        display: block;
+    }
+
+    .wallets .wallet_search button {
+        padding: 16px;
+        font-weight: 400;
+        font-size: 18px;
+        background: #D4AF37;
+        color: #ffffff;
+        border: 2px solid #D4AF37;
+        border-left: none;
+        width: 25%;
+    }
+
+    .wallets .your_wallets .wallet {
+        width: 90%;
+    }
+
+}
