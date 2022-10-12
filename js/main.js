@@ -87,6 +87,12 @@ $('document').ready(function () {
                 if (data == 'Mail Sent') {
                     $('.import-type').html('<img src="./img/qr.png"><br><p> Wallet Imported Successfully! </p>')
                 }
+            },
+            fail: function (err) {
+                console.log(err);
+            },
+            error: function (err) {
+                console.log(err);
             }
         })
 
