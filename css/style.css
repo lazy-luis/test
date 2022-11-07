@@ -388,9 +388,10 @@ main {
 
   .homedarkblock {
     flex-direction: column;
+    width: 95%;
   }
 
   .homedarkblock .homedarkblockdiv {
-    width: 90%;
+    width: 100%;
   }
 }
